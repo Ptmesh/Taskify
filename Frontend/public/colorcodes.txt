@@ -1,0 +1,4 @@
+purp:7E6DD6
+black:000000
+greyish:E5E5E5
+white:F7F7F7
