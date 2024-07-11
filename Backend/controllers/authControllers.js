@@ -36,3 +36,13 @@ export const loginUser = async (req, res) => {
     console.log(error, "Couldn't login the user");
   }
 };
+
+export const logoutUser = (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).json({ error: "Failed to destroy session" });
+    }
+    res.clearCookie("connect.sid");
+    res.status(200).json({ message: "Logged out successfully" });
+  });
+};
